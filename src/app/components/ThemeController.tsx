@@ -1,10 +1,10 @@
 "use client";
-import { useEffect } from "react";
+import { DetailedHTMLProps, HTMLAttributes, useEffect } from "react";
 import { themeChange } from "theme-change";
 import { themes } from "../../../themes";
-import "../styles/scroll.css"
+import "../styles/scroll.css";
 
-export default function ThemeController() {
+export default function ThemeController(props: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
   useEffect(() => {
     themeChange(false);
   }, []);
@@ -24,7 +24,7 @@ export default function ThemeController() {
     );
   });
   return (
-    <div className="dropdown mb-72">
+    <div  {...props} className={"dropdown dropdown-end " + props.className}>
       <div tabIndex={0} role="button" className="btn m-1">
         Theme
         <svg
