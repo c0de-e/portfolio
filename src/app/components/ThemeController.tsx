@@ -24,7 +24,7 @@ export default function ThemeController(props: DetailedHTMLProps<HTMLAttributes<
     );
   });
   return (
-    <div  {...props} className={"dropdown dropdown-end " + props.className}>
+    <div  {...props} className={"dropdown dropdown-bottom " + props.className}>
       <div tabIndex={0} role="button" className="btn m-1">
         Theme
         <svg

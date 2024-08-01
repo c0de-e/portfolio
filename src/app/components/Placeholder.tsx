@@ -1,7 +1,9 @@
-export default async function Placeholder() {
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-    return <>
-        <article className="prose mx-auto px-auto p-8">
+export default async function Placeholder(props: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>) {
+
+    return (
+        <article {...props} className="prose mx-auto px-auto p-8">
             <h1>Garlic bread with cheese: What the science tells us</h1>
             <p>
                 For years parents have espoused the health benefits of eating garlic bread with cheese to their
@@ -12,5 +14,5 @@ export default async function Placeholder() {
                 But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
                 springing up around the country.
             </p>
-        </article></>;
+        </article>);
 }
