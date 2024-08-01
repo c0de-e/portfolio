@@ -1,5 +1,5 @@
 "use server";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 
 export default async function Home() {
   return (
@@ -19,8 +19,8 @@ export default async function Home() {
       </article>
       </div>
       <Header />
-      <article className="prose mx-auto px-auto p-8" style={{ height: "2000px" }}>
-        <h1>Garlic bread with cheese: What the science tells us</h1>
+      <article  className="prose mx-auto px-auto p-8" style={{ height: "2000px" }}>
+        <h1 id="home">Garlic bread with cheese: What the science tells us</h1>
         <p>
           For years parents have espoused the health benefits of eating garlic bread with cheese to their
           children, with the food earning such an iconic status in our culture that kids will often dress
