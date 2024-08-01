@@ -14,7 +14,7 @@ export default function HeaderAnchor(props: props) {
             if (!anchorObserve) return;
 
             setIsIntersecting(anchorObserve?.isIntersecting);
-        }, { threshold: .5 });
+        }, { threshold: .05 });
         if (anchor) observer?.observe(anchor);
     }, [ anchor, props.anchor_id ]);
 
