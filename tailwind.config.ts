@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import daisyui from 'daisyui';
 import typography from '@tailwindcss/typography';
+import forms from '@tailwindcss/forms';
 import { themes } from "./themes";
 
 const config: Config = {
@@ -18,7 +19,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [ typography, daisyui ],
+  plugins: [ typography, forms, daisyui ],
   // daisyUI config (optional - here are the default values)
   daisyui: {
     themes: themes, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
