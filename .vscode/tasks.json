@@ -1,0 +1,13 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Docker Run",
+            "type": "shell",
+            "command": "docker run --env-file ./.env.local --rm -it -p 3000:3000/tcp portfolio:latest ",
+            "problemMatcher": []
+        }
+    ]
+}

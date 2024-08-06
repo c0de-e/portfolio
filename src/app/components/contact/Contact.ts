@@ -21,15 +21,16 @@ export async function sendContact(prevState: boolean, formData: FormData): Promi
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
+        secure: true,
         auth: {
             user: process.env.GMAIL_ADDRESS,
             pass: process.env.GMAIL_PASSWORD
         }
     });
 
-    const from_email = formData.get(EMAIL_NAME)?.toString();
+    const from_email = formData.get(EMAIL_NAME)?.toString() as string;
     const mailOptions: MailOptions = {
-        from: from_email,
+        from: `Portfolio Mail <${from_email}>`,
         to: process.env.GMAIL_ADDRESS,
         subject: formData.get(SUBJECT_NAME)?.toString(),
         html: `<h3>From: ${from_email}</h3><br/>${formData.get(MESSAGE_NAME)?.toString()}`
@@ -41,7 +42,6 @@ export async function sendContact(prevState: boolean, formData: FormData): Promi
     });
     return true;
 }
-
 
 interface SiteVerifyRes {
     action?: string;
