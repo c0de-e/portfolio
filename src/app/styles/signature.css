@@ -1,0 +1,19 @@
+.svg-recolor {
+  filter: drop-shadow(0 10000px 0 oklch(var(--a)));
+  transform: translateY(-10000px);
+}
+
+.signature {
+  > path {
+    opacity: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-name: draw-line;
+  }
+}
+
+@keyframes draw-line {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
