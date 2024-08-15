@@ -1,31 +1,36 @@
 "use client";
-import { DetailedHTMLProps, HTMLAttributes, useEffect } from "react";
+import { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from "react";
 import { themeChange } from "theme-change";
-import { themes } from "../../../themes";
-import "../styles/scroll.css";
+import { themeTypes } from "@/app/../../themes";
+import "@/app/styles/scroll.css";
 
 export default function ThemeController(props: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
+  const [ selectedTheme, setSelectedTheme ] = useState("default");
   useEffect(() => {
     themeChange(false);
+    const themeName = localStorage.getItem("theme");
+    if (themeName) setSelectedTheme(themeName);
   }, []);
 
-  const themeList = themes.map((themeName) => {
+  const themeList = themeTypes.map((theme) => {
     return (
-      <li key={themeName}>
+      <li key={theme.name} className="flex gap-2">
         <input
           type="button"
           name="theme-dropdown"
-          className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-          aria-label={themeName}
-          data-set-theme={themeName}
-          value={themeName}
+          className={`theme-controller flex-1 btn btn-sm btn-block justify-start text-start ${theme.name == selectedTheme ? "btn-accent" : "btn-ghost"}`}
+          aria-label={theme.name}
+          data-set-theme={theme.name}
+          value={theme.name[ 0 ].toUpperCase() + theme.name.slice(1)}
+          onClick={() => setSelectedTheme(theme.name)}
         />
+        {theme.name != "default" ? <label htmlFor={theme.name} className="text-end">({theme.type})</label> : null}
       </li>
     );
   });
   return (
-    <div  {...props} className={"dropdown dropdown-bottom " + props.className}>
-      <div tabIndex={0} role="button" className="btn m-1">
+    <div {...props} className={"dropdown dropdown-bottom " + props.className}>
+      <div tabIndex={0} role="button" className="btn btn-accent m-1">
         Theme
         <svg
           width="12px"

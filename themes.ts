@@ -1,34 +1,38 @@
-export const themes = [
+export const CustomThemes =
+{
+    cool: {
+        "primary": "#4d194d",
+        "secondary": "#1b3a4b",
+        "accent": "#e5e7eb",
+        "neutral": "#1b1b1b",
+        "base-100": "#212f45",
+        "info": "#008dff",
+        "success": "#66fa04",
+        "warning": "#ff7400",
+        "error": "#ff3963",
+    },
+};
+
+export const DarkThemes = [
     "default",
+    "aqua",
+    "cool",
     "dark",
-    "light",
-    "cupcake",
+    "dim",
+    "dracula",
+    "halloween",
+    "night",
+    "synthwave",
+];
+
+export const LightThemes = [
     "bumblebee",
     "emerald",
-    "corporate",
-    "synthwave",
-    "retro",
-    "cyberpunk",
-    "valentine",
-    "halloween",
     "garden",
-    "forest",
-    "aqua",
+    "light",
     "lofi",
     "pastel",
-    "fantasy",
-    "wireframe",
-    "black",
-    "luxury",
-    "dracula",
-    "cmyk",
-    "autumn",
-    "business",
-    "acid",
-    "lemonade",
-    "night",
-    "coffee",
-    "winter",
-    "dim",
-    "nord",
-    "sunset", ];
+];
+
+export const themeTypes = DarkThemes.map(t => { return { name: t, type: "dark" }; }).concat(
+    LightThemes.map(t => { return { name: t, type: "light" }; }));
