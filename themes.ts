@@ -14,7 +14,6 @@ export const CustomThemes =
 };
 
 export const DarkThemes = [
-    "default",
     "aqua",
     "cool",
     "dark",
@@ -34,5 +33,7 @@ export const LightThemes = [
     "pastel",
 ];
 
-export const themeTypes = DarkThemes.map(t => { return { name: t, type: "dark" }; }).concat(
-    LightThemes.map(t => { return { name: t, type: "light" }; }));
+export const themeTypes = [ { name: "default", type: "" } ]
+    .concat(DarkThemes.map(t => { return { name: t, type: "dark" }; })
+        .concat(LightThemes.map(t => { return { name: t, type: "light" }; }))
+        .sort((t1, t2) => t1.name.localeCompare(t2.name)));
