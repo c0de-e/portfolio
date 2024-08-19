@@ -1,7 +1,7 @@
 export const CustomThemes =
 {
     cool: {
-        "primary": "#4d194d",
+        "primary": "#9749e6",
         "secondary": "#1b3a4b",
         "accent": "#e5e7eb",
         "neutral": "#1b1b1b",

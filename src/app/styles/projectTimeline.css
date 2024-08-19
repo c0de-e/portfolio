@@ -1,0 +1,14 @@
+.skill {
+  @apply border-solid border-2 border-primary rounded-md px-2 font-semibold;
+}
+
+.project-hover {
+  @apply transition-all;
+}
+
+.project-hover:hover {
+  background-color: color-mix(in srgb, oklch(var(--a)), transparent 90%);
+  .project-title {
+    @apply text-primary;
+  }
+}
