@@ -18,7 +18,7 @@ export default function ThemeController(props: DetailedHTMLProps<HTMLAttributes<
         <input
           type="button"
           name="theme-dropdown"
-          className={`theme-controller flex-1 btn btn-sm btn-block justify-start text-start ${theme.name == selectedTheme ? "btn-accent" : "btn-ghost"}`}
+          className={`theme-controller flex-1 btn btn-sm btn-block justify-start text-start ${theme.name == selectedTheme ? "btn-secondary" : "btn-ghost"}`}
           aria-label={theme.name}
           data-set-theme={theme.name}
           value={theme.name[ 0 ].toUpperCase() + theme.name.slice(1)}
@@ -30,7 +30,7 @@ export default function ThemeController(props: DetailedHTMLProps<HTMLAttributes<
   });
   return (
     <div {...props} className={"dropdown dropdown-bottom " + props.className}>
-      <div tabIndex={0} role="button" className="btn btn-accent m-1">
+      <div tabIndex={0} role="button" className="btn btn-secondary m-1">
         Theme
         <svg
           width="12px"

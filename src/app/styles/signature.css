@@ -1,5 +1,5 @@
 .svg-recolor {
-  filter: drop-shadow(0 10000px 0 oklch(var(--a)));
+  filter: drop-shadow(0 10000px 0 oklch(var(--p)));
   transform: translateY(-10000px);
 }
 

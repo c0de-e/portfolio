@@ -6,7 +6,7 @@ export default function Signature() {
     const svgRef = useRef<SVGSVGElement>(null);
     useEffect(() => drawSignature(svgRef), [ svgRef ]);
     return (
-        <div className="flex-initial mx-auto w-auto">
+        <div className="flex-initial mx-auto w-full">
             <svg ref={svgRef} className='signature svg-recolor w-full flex-no-shrink fill-current' xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 664.6666666666666 292" width="664.6666666666666" height="292">
                 <path d="M 98.667,166.333 C 104.058,164.821 103.333,164.000 108.000,161.667" strokeWidth="5.087" stroke="black" fill="none" strokeLinecap="round"></path>
                 <path d="M 108.000,161.667 C 113.772,155.979 110.724,159.487 112.000,155.667" strokeWidth="4.766" stroke="black" fill="none" strokeLinecap="round"></path>
