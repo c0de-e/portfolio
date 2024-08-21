@@ -12,3 +12,16 @@
     @apply text-primary;
   }
 }
+
+.project-link {
+  @apply transition-all;
+}
+.project-link:hover {
+  @apply stroke-info;
+}
+.project-link-youtube {
+  @apply transition-all;
+}
+.project-link-youtube:hover {
+  @apply stroke-error;
+}
