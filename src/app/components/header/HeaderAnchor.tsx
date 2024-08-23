@@ -22,10 +22,7 @@ export default function HeaderAnchor(props: props) {
         {...props}
         href={`#${props.anchor_id}`}
         className={isIntersecting ? "selected-navigation" : ""}
-        onClick={(e) => {
-            e.preventDefault();
-            anchor?.scrollIntoView({ behavior: "smooth", inline: "start" });
-        }} />);
+        onClick={() => anchor?.scrollIntoView({ behavior: "smooth", inline: "start" })} />);
 }
 
 interface props extends DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
