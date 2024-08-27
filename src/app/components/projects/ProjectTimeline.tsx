@@ -1,6 +1,6 @@
 import TimelineProject from "./TimelineProject";
 
-export default function Projects() {
+export default function ProjectTimeline() {
     return (
         <div className="timeline timeline-primary timeline-snap-icon max-md:timeline-compact timeline-vertical max-w-full px-2">
             <li>

@@ -3,7 +3,7 @@ import "@/app/styles/projectTimeline.css";
 import { HTMLAttributes } from "react";
 
 export default async function TimelineProject(props: TimelineProjectProps) {
-    const skills = props.Skills.map(skill => (<div key={skill} className="skill text-sm">{skill}</div>));
+    const skills = props.Skills.sort().map(skill => (<div key={skill} className="skill text-sm">{skill}</div>));
     let projectLinks: JSX.Element | JSX.Element[] | null = null;
     if (Array.isArray(props.ProjectLinkProps))
         projectLinks = props.ProjectLinkProps.map(p => <ProjectLink key={p.href} props={p} />);

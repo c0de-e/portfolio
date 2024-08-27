@@ -1,5 +1,5 @@
 .skill {
-  @apply border-solid border-2 border-primary rounded-md px-2 font-semibold;
+  @apply rounded-md border-2 border-solid border-primary px-2 font-semibold;
 }
 
 .project-hover {
@@ -19,9 +19,20 @@
 .project-link:hover {
   @apply stroke-info;
 }
+a:has(.project-link):focus-visible {
+  svg {
+    @apply stroke-info;
+  }
+}
+
 .project-link-youtube {
   @apply transition-all;
 }
 .project-link-youtube:hover {
   @apply stroke-error;
+}
+a:has(.project-link-youtube):focus-visible {
+  svg {
+    @apply stroke-error;
+  }
 }
