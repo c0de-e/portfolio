@@ -3,12 +3,20 @@ import { RefObject, useEffect, useRef } from "react";
 import "@/app/styles/signature.css";
 
 export default function Signature() {
-    const svgRef = useRef<SVGGElement>(null);
-    useEffect(() => drawSignature(svgRef), [ svgRef ]);
-    return (
-        <div className="flex-initial mx-auto w-full">
-            <svg className='svg-recolor w-full flex-no-shrink fill-current' xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 664.6666666666666 292" width="664.6666666666666" height="292">
-                <g ref={svgRef} className="signature" transform="translate(25)">
+  const svgRef = useRef<SVGGElement>(null);
+  useEffect(() => drawSignature(svgRef), [svgRef]);
+  return (
+    <div className="mx-auto w-full flex-initial">
+      <svg
+        className="svg-recolor flex-no-shrink w-full fill-current"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 664.6666666666666 292"
+        width="664.6666666666666"
+        height="292"
+      >
+        {/* prettier-ignore */}
+        <g ref={svgRef} className="signature" transform="translate(25)">
                     <path d="M 98.667,166.333 C 104.058,164.821 103.333,164.000 108.000,161.667" strokeWidth="5.087" stroke="black" fill="none" strokeLinecap="round"></path>
                     <path d="M 108.000,161.667 C 113.772,155.979 110.724,159.487 112.000,155.667" strokeWidth="4.766" stroke="black" fill="none" strokeLinecap="round"></path>
                     <path d="M 112.000,155.667 C 103.626,156.187 108.106,154.979 96.667,159.667" strokeWidth="4.046" stroke="black" fill="none" strokeLinecap="round"></path>
@@ -142,29 +150,31 @@ export default function Signature() {
                     <path d="M 522.667,170.333 C 529.709,174.261 529.667,174.333 536.667,178.333" strokeWidth="3.341" stroke="black" fill="none" strokeLinecap="round"></path>
                     <path d="M 536.667,178.333 C 543.318,182.360 543.376,182.261 550.000,186.333" strokeWidth="2.984" stroke="black" fill="none" strokeLinecap="round"></path>
                 </g>
-            </svg>
-        </div>
-    );
+      </svg>
+    </div>
+  );
 }
 
 const drawSignature = (ref: RefObject<SVGGElement>) => {
-    const paths = Array.from(ref.current?.children as HTMLCollectionOf<SVGPathElement>);
-    if (!paths.length) return;
+  const paths = Array.from(
+    ref.current?.children as HTMLCollectionOf<SVGPathElement>,
+  );
+  if (!paths.length) return;
 
-    let drawDelay = 0;
-    let totalLength = 0;
-    paths.forEach((path) => totalLength += path.getTotalLength());
+  let drawDelay = 0;
+  let totalLength = 0;
+  paths.forEach((path) => (totalLength += path.getTotalLength()));
 
-    paths.forEach((path) => {
-        const pathLength = path.getTotalLength();
-        const duration = pathLength / totalLength;
+  paths.forEach((path) => {
+    const pathLength = path.getTotalLength();
+    const duration = pathLength / totalLength;
 
-        path.style.animationDuration = `${duration}s`;
-        path.style.animationDelay = `${drawDelay}s`;
+    path.style.animationDuration = `${duration}s`;
+    path.style.animationDelay = `${drawDelay}s`;
 
-        path.setAttribute('stroke-dasharray', pathLength.toString());
-        path.setAttribute('stroke-dashoffset', pathLength.toString());
+    path.setAttribute("stroke-dasharray", pathLength.toString());
+    path.setAttribute("stroke-dashoffset", pathLength.toString());
 
-        drawDelay += duration + .02;
-    });
+    drawDelay += duration + 0.02;
+  });
 };

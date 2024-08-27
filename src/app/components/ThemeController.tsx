@@ -1,15 +1,21 @@
 "use client";
-import { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from "react";
+import {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  HTMLAttributes,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { themeChange } from "theme-change";
 import { themeTypes } from "@/app/../../themes";
 import "@/app/styles/scroll.css";
 
-export default function ThemeController(props: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
-  const [ selectedTheme, setSelectedTheme ] = useState("default");
-  useEffect(() => {
-    themeChange(false);
+export default function ThemeController(props: props) {
+  const [selectedTheme, setSelectedTheme] = useState("default");
+  useLayoutEffect(() => {
     const themeName = localStorage.getItem("theme");
     if (themeName) setSelectedTheme(themeName);
+    themeChange(false);
   }, []);
 
   const themeList = themeTypes.map((theme) => {
@@ -18,19 +24,34 @@ export default function ThemeController(props: DetailedHTMLProps<HTMLAttributes<
         <input
           type="button"
           name="theme-dropdown"
-          className={`theme-controller flex-1 btn btn-sm btn-block justify-start text-start ${theme.name == selectedTheme ? "btn-secondary" : "btn-ghost"}`}
+          className={`theme-controller btn btn-sm btn-block flex-1 justify-start text-start ${theme.name == selectedTheme ? "btn-secondary" : "btn-ghost"}`}
           aria-label={theme.name}
           data-set-theme={theme.name}
-          value={theme.name[ 0 ].toUpperCase() + theme.name.slice(1)}
+          value={theme.name[0].toUpperCase() + theme.name.slice(1)}
           onClick={() => setSelectedTheme(theme.name)}
         />
-        {theme.name != "default" ? <label htmlFor={theme.name} className="text-end">({theme.type})</label> : null}
+        {theme.name != "default" ? (
+          <label htmlFor={theme.name} className="text-end">
+            ({theme.type})
+          </label>
+        ) : null}
       </li>
     );
   });
+
   return (
-    <div {...props} className={"dropdown dropdown-bottom " + props.className}>
-      <div tabIndex={0} role="button" className="btn btn-secondary m-1">
+    <div
+      {...props.props}
+      className={
+        "dropdown dropdown-bottom self-center " + props.props?.className
+      }
+    >
+      <button
+        {...props.buttonProps}
+        tabIndex={0}
+        role="button"
+        className="btn btn-ghost btn-secondary btn-xs m-1 sm:btn-sm md:btn-md"
+      >
         Theme
         <svg
           width="12px"
@@ -41,10 +62,28 @@ export default function ThemeController(props: DetailedHTMLProps<HTMLAttributes<
         >
           <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
-      </div>
-      <ul tabIndex={0} className="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl scrollbar overflow-y-scroll h-56">
+      </button>
+      <ul
+        {...props.dropdownProps}
+        className={
+          "scrollbar dropdown-content z-[1] h-56 w-52 overflow-y-scroll rounded-box bg-base-300 p-2 shadow-2xl " +
+          props?.dropdownProps?.className
+        }
+      >
         {themeList}
       </ul>
     </div>
   );
+}
+
+interface props {
+  props?: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  buttonProps?: DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >;
+  dropdownProps?: DetailedHTMLProps<
+    HTMLAttributes<HTMLUListElement>,
+    HTMLUListElement
+  >;
 }
