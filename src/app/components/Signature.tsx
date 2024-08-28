@@ -1,6 +1,7 @@
 "use client";
 import { RefObject, useEffect, useRef } from "react";
 import "@/app/styles/signature.css";
+import { SVGGlow } from "./SVGGlow";
 
 export default function Signature() {
   const svgRef = useRef<SVGGElement>(null);
@@ -15,6 +16,7 @@ export default function Signature() {
         width="664.6666666666666"
         height="292"
       >
+        <SVGGlow id="sig-glow" />
         {/* prettier-ignore */}
         <g ref={svgRef} className="signature" transform="translate(25)">
                     <path d="M 98.667,166.333 C 104.058,164.821 103.333,164.000 108.000,161.667" strokeWidth="5.087" stroke="black" fill="none" strokeLinecap="round"></path>

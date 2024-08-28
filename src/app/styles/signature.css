@@ -4,6 +4,7 @@
 }
 
 .signature {
+  filter: url(#sig-glow);
   > path {
     opacity: 1;
     animation-timing-function: linear;

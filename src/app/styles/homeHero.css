@@ -4,6 +4,7 @@
 .svg-btn:hover,
 .svg-btn:focus-visible {
   > svg {
+    filter: url(#info);
     @apply stroke-info;
   }
 }
