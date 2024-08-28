@@ -1,5 +1,11 @@
 .skill {
   @apply rounded-md border-2 border-solid border-primary px-2 font-semibold;
+  box-shadow: 0 0 3px oklch(var(--p));
+  background: linear-gradient(
+    45deg,
+    color-mix(in srgb, oklch(var(--s)) 25%, transparent 100%),
+    color-mix(in srgb, oklch(var(--p)) 25%, transparent 100%)
+  );
 }
 
 .project-hover {
