@@ -36,9 +36,6 @@ export default function HeaderAnchor(props: props) {
       {...props}
       href={`#${props.anchor_id}`}
       className={isIntersecting ? "selected-navigation" : ""}
-      onClick={() =>
-        anchor?.scrollIntoView({ behavior: "smooth", inline: "start" })
-      }
     />
   );
 }
