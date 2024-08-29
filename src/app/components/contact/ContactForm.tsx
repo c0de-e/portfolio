@@ -27,33 +27,37 @@ export default function ContactForm() {
           {!contactSuccess ? (
             <form className="card-body" action={formAction}>
               <div className="form-control">
-                <label className="label">
+                <label className="label" htmlFor={EMAIL_NAME}>
                   <span className="label-text">Email</span>
                 </label>
                 <input
                   type="email"
                   name={EMAIL_NAME}
+                  id={EMAIL_NAME}
                   className="input input-bordered"
                   required
+                  autoComplete="home email"
                 />
               </div>
               <div className="form-control">
-                <label className="label">
+                <label className="label" htmlFor={SUBJECT_NAME}>
                   <span className="label-text">Subject</span>
                 </label>
                 <input
                   type="text"
                   name={SUBJECT_NAME}
+                  id={SUBJECT_NAME}
                   className="input input-bordered"
                   required
                 />
               </div>
               <div className="form-control">
-                <label className="label">
+                <label className="label" htmlFor={MESSAGE_NAME}>
                   <span className="label-text">Message</span>
                 </label>
                 <textarea
                   name={MESSAGE_NAME}
+                  id={MESSAGE_NAME}
                   className="textarea textarea-bordered h-24"
                   required
                 />

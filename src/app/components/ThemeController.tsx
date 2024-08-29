@@ -31,9 +31,7 @@ export default function ThemeController(props: props) {
           onClick={() => setSelectedTheme(theme.name)}
         />
         {theme.name != "default" ? (
-          <label htmlFor={theme.name} className="text-end">
-            ({theme.type})
-          </label>
+          <div className="text-end">({theme.type})</div>
         ) : null}
       </li>
     );
