@@ -95,6 +95,39 @@ export default function ProjectTimeline() {
         <hr />
         <CenterChevronDown />
         <TimelineProject
+          ProjectTitle={"Project Kronos"}
+          startOrEnd="timeline-end"
+          StartDate={new Date(2019, 0)}
+          EndDate={new Date(2019, 4)}
+          ProjectDescription={`
+                        Collaborated with artist and level designer to develop a puzzle platformer 
+                        Implemented core mechanics, such as time-warp and puzzles using C#
+                        Supported others with technical issues regarding Unity and Perforce to ensure implementation of scripts
+                        Ensured team efforts were on track to meet deadlines by frequently checking in with the team 
+ `}
+          Skills={["Unity", "C#"]}
+        />
+        <hr />
+      </li>
+      <li>
+        <hr />
+        <CenterChevronDown />
+        <TimelineProject
+          ProjectTitle={"Lava Run 3D"}
+          startOrEnd="timeline-start"
+          StartDate={new Date(2019, 0)}
+          EndDate={new Date(2019, 4)}
+          ProjectDescription={`
+                        Game 
+ `}
+          Skills={["Unity", "C#"]}
+        />
+        <hr />
+      </li>
+      <li>
+        <hr />
+        <CenterChevronDown />
+        <TimelineProject
           ProjectTitle={"Project X - A Short Animated Film"}
           ProjectLinkProps={[
             {
@@ -133,6 +166,56 @@ export default function ProjectTimeline() {
                         Implemented numerous core gameplay mechanics, such as charging stations and tower upgrades using C# Revised existing scripts to be optimized for mobile Augmented Reality 
                         Managed a team of 3 engineers by delegating tasks based on the relevancy of each sub-role Participated in problem-solving technical issues in Unity and Perforce to assure team success `}
           Skills={["Unity", "C#", "Augmented Reality"]}
+        />
+        <hr />
+      </li>
+      <li>
+        <hr />
+        <CenterChevronDown />
+        <TimelineProject
+          ProjectTitle={"The Strong Calculator"}
+          startOrEnd="timeline-end"
+          StartDate={new Date(2018, 8)}
+          EndDate={new Date(2018, 11)}
+          ProjectDescription={`
+                        App`}
+          Skills={["Android App", "Kotin", "STrength Training"]}
+        />
+        <hr />
+      </li>
+      <li>
+        <hr />
+        <CenterChevronDown />
+        <TimelineProject
+          ProjectTitle={"The Ramswood Discovery"}
+          ProjectLinkProps={{
+            type: "youtube",
+            href: "https://www.youtube.com/watch?v=WGvAGFW2CuE",
+          }}
+          startOrEnd="timeline-start"
+          StartDate={new Date(2018, 0)}
+          EndDate={new Date(2018, 3)}
+          ProjectDescription={`
+                        Game `}
+          Skills={["Unity", "C#", "Lead"]}
+        />
+        <hr />
+      </li>
+      <li>
+        <hr />
+        <CenterChevronDown />
+        <TimelineProject
+          ProjectTitle={"Maya Humanoid Autorig"}
+          ProjectLinkProps={{
+            type: "youtube",
+            href: "https://www.youtube.com/watch?v=OlX4iucVmsc",
+          }}
+          startOrEnd="timeline-end"
+          StartDate={new Date(2018, 0)}
+          EndDate={new Date(2018, 3)}
+          ProjectDescription={`
+                        Game `}
+          Skills={["Maya", "Python", "Technical Rigging"]}
         />
         <hr />
       </li>
