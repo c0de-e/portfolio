@@ -10,6 +10,7 @@ import {
 import AboutMe from "./components/AboutMe";
 import ProjectTimeline from "./components/projects/ProjectTimeline";
 import HomeHero from "./components/HomeHero";
+import ExpandingContainer from "./components/projects/ExpandingContainer";
 
 export default async function Home() {
   return (
@@ -25,7 +26,7 @@ export default async function Home() {
         <AboutMe />
       </section>
       <section id={PROJECTS_SECTION} className="scroll-mt-16">
-        <ProjectTimeline />
+        <ExpandingContainer div={<ProjectTimeline />} />
       </section>
       <section id={CONTACT_SECTION} className="hero min-h-screen">
         <ContactForm />
