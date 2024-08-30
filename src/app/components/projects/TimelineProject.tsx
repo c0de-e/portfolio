@@ -17,7 +17,7 @@ export default async function TimelineProject(props: TimelineProjectProps) {
 
   return (
     <div
-      className={`${props.startOrEnd} project-hover prose rounded px-4 py-4 md:text-end ${props.className} flex flex-col gap-2`}
+      className={`${props.startOrEnd} project-hover prose rounded px-4 pb-4 pt-2 md:text-end ${props.className} flex flex-col`}
     >
       <div>
         <time className="font-mono italic">
@@ -35,7 +35,11 @@ export default async function TimelineProject(props: TimelineProjectProps) {
             {props.ProjectLinkProps ? projectLinks : null}
           </div>
         </div>
-        {props.ProjectDescription}
+        {typeof props.ProjectDescription == "string" ? (
+          <p className="mb-2.5 mt-0">{props.ProjectDescription}</p>
+        ) : (
+          props.ProjectDescription
+        )}
       </div>
       <div className={`flex flex-wrap gap-4 md:ml-auto`}>{skills}</div>
     </div>
@@ -122,7 +126,7 @@ interface TimelineProjectProps {
   StartDate: Date;
   EndDate?: Date;
   ProjectTitle: string;
-  ProjectDescription: string;
+  ProjectDescription: string | JSX.Element;
   ProjectLinkProps?: ProjectLinkProps | Array<ProjectLinkProps>;
   Skills: Array<string>;
   className?: HTMLAttributes<HTMLDivElement> | string;
