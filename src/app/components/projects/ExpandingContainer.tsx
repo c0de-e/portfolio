@@ -23,7 +23,8 @@ export default function ExpandingContainer(props: props) {
     props.tabbableDivs.forEach((child) => {
       const pr = containerRef.current?.getBoundingClientRect() as DOMRect;
       const cr = child.getBoundingClientRect();
-      const isNotClipped = pr.bottom - 50 >= cr.top && pr.top <= cr.bottom;
+      const clipTolarance = 75;
+      const isNotClipped = pr.bottom - clipTolarance >= cr.top && pr.top <= cr.bottom;
       if (!isNotClipped) child.setAttribute("inert", "true");
       else child.removeAttribute("inert");
     });
