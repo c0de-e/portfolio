@@ -11,9 +11,10 @@ export default function ProjectTimeline() {
           StartDate={new Date(2023, 7)}
           EndDate={new Date(2024, 6)}
           ProjectDescription={`
-                        Leveraged Autodesk APIs to handle required data for quality control and managed quality controlled data with Firebase Firestore
-                        Dynamically generated Google Looker Studio dashboards and automated data filtering using Firebase Cloud Functions
-                        Automated quality control processes with webhooks, cutting out 90% of manual work and enabling the team to focus on high priority tasks
+            Using Next.js and GCP, I developed a Quality Control (QC) Web App to automate manual spreadsheet QC. 
+            The front end features an admin dashboard to create webhooks (for automatic QC), test queries 
+            (including a number of preset queries to test with) and generate Google Looker Studio dashboards per project. 
+            I used Firebase Firestore to store the data, and Firebase Cloud Functions to automate data filtering.
                         `}
           Skills={["React.js", "Next.js", "Firebase", "GCP"]}
         />
@@ -84,9 +85,12 @@ export default function ProjectTimeline() {
           StartDate={new Date(2020, 0)}
           EndDate={new Date(2022, 2)}
           ProjectDescription={`
-                        Generated admin dashboard to manage 1000+ users
-                        Created a basic data text viewer from an Autodesk API
-                        Used Google Charts to visualize user and project data `}
+            Developed and managed a Autodesk Construction Cloud dashboard
+            to view big data at a glance. The dashboard features OAuth for
+            permissions, a data text viewer that reads data from an Autodesk 3D model,
+            Google Charts to visualize user and project data, and an admin dashboard
+            to manage 1000+ users.
+         `}
           Skills={["OAuth", "HTML5", "CSS", "Javascript"]}
         />
         <hr />
@@ -104,7 +108,7 @@ export default function ProjectTimeline() {
                         Implemented core mechanics, such as time-warp and puzzles using C#
                         Supported others with technical issues regarding Unity and Perforce to ensure implementation of scripts
                         Ensured team efforts were on track to meet deadlines by frequently checking in with the team 
- `}
+         `}
           Skills={["Unity", "C#"]}
         />
         <hr />
@@ -176,8 +180,11 @@ export default function ProjectTimeline() {
           StartDate={new Date(2018, 8)}
           EndDate={new Date(2018, 11)}
           ProjectDescription={`
-                        Implemented numerous core gameplay mechanics, such as charging stations and tower upgrades using C# Revised existing scripts to be optimized for mobile Augmented Reality 
-                        Managed a team of 3 engineers by delegating tasks based on the relevancy of each sub-role Participated in problem-solving technical issues in Unity and Perforce to assure team success `}
+            Collaborted in a class-wide project with artists, audio engineers, and other programmers 
+            to create an AR Unity Game. As the lead engineer for the project, I
+            implementing core gameplay mechanics, managed other engineers, and 
+            delegated tasks to ensure success. 
+        `}
           Skills={["Unity", "C#", "Augmented Reality"]}
         />
         <hr />
