@@ -117,9 +117,22 @@ export default function ProjectTimeline() {
           startOrEnd="timeline-start"
           StartDate={new Date(2019, 0)}
           EndDate={new Date(2019, 4)}
-          ProjectDescription={`
-                        Game 
- `}
+          ProjectDescription={
+            <p className="mb-2.5 mt-0">
+              Developed and designed an infinite runner game using C# and Unity.
+              Worked with an artist to effeciently integrate reusable assets
+              infinitely. The game features obstacles, powerups,and increasing
+              speed, and took inspiration from{" "}
+              <a
+                className="link"
+                href="https://en.wikipedia.org/wiki/Temple_Run"
+                target="_blank"
+              >
+                Temple Run
+              </a>
+              .
+            </p>
+          }
           Skills={["Unity", "C#"]}
         />
         <hr />
@@ -177,9 +190,22 @@ export default function ProjectTimeline() {
           startOrEnd="timeline-end"
           StartDate={new Date(2018, 8)}
           EndDate={new Date(2018, 11)}
-          ProjectDescription={`
-                        App`}
-          Skills={["Android App", "Kotin", "STrength Training"]}
+          ProjectDescription={
+            <p className="mb-2.5 mt-0">
+              Using Kotlin and Android Studio, I developed an app for the first
+              time for a Mobile programming class. The app calculates the
+              user&apos;s{" "}
+              <a
+                className="link"
+                target="_blank"
+                href="https://en.wikipedia.org/wiki/Wilks_coefficient"
+              >
+                Wilks Score
+              </a>{" "}
+              and features notetaking.
+            </p>
+          }
+          Skills={["Android App", "Kotin", "Strength Training"]}
         />
         <hr />
       </li>
@@ -196,8 +222,12 @@ export default function ProjectTimeline() {
           StartDate={new Date(2018, 0)}
           EndDate={new Date(2018, 3)}
           ProjectDescription={`
-                        Game `}
-          Skills={["Unity", "C#", "Lead"]}
+            In a Game Design class, I Engineered and designed a horror game 
+            using Unity and C#. I worked on a team of 4 as the lead programmer, 
+            implementing core game mechanics and systems such as
+            the character controller, progression system, camera work (i.e. cutscenes), etc.
+                         `}
+          Skills={["Unity", "C#", "Lead", "Level Design"]}
         />
         <hr />
       </li>
@@ -205,7 +235,7 @@ export default function ProjectTimeline() {
         <hr />
         <CenterChevronDown />
         <TimelineProject
-          ProjectTitle={"Maya Humanoid Autorig"}
+          ProjectTitle={"Maya Autorig"}
           ProjectLinkProps={{
             type: "youtube",
             href: "https://www.youtube.com/watch?v=OlX4iucVmsc",
@@ -214,8 +244,12 @@ export default function ProjectTimeline() {
           StartDate={new Date(2018, 0)}
           EndDate={new Date(2018, 3)}
           ProjectDescription={`
-                        Game `}
-          Skills={["Maya", "Python", "Technical Rigging"]}
+            Using Python and Autodesk Maya, I designed and created an Autorigging tool. 
+            The tool was developed for a Tools programming class and used in a separate 
+            Technical Rigging class. The tool features a UI with configurable options
+            that allow the user to change the humanoid rig to their needs.
+                         `}
+          Skills={["Maya", "Python", "Technical Rigging", "Tools Programming"]}
         />
         <hr />
       </li>
