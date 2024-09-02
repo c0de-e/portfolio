@@ -14,8 +14,7 @@ export default function ProjectTimeline() {
             Using Next.js and GCP, I developed a Quality Control (QC) Web App to automate manual spreadsheet QC. 
             The front end features an admin dashboard to create webhooks (for automatic QC), test queries 
             (including a number of preset queries to test with) and generate Google Looker Studio dashboards per project. 
-            I used Firebase Firestore to store the data, and Firebase Cloud Functions to automate data filtering.
-                        `}
+            I used Firebase Firestore to store the data, and Firebase Cloud Functions to automate data filtering.`}
           Skills={["React.js", "Next.js", "Firebase", "GCP"]}
         />
         <hr />
@@ -33,9 +32,10 @@ export default function ProjectTimeline() {
           StartDate={new Date(2023, 5)}
           EndDate={new Date(2024, 6)}
           ProjectDescription={`
-                        Developed a tool to extract data from PDF store receipts and populate a Google Sheet, eliminating any potential user error
-                        Developed 3 utility tools: advanced column sorting, auto populated purchase dates, and a custom UI to apply formulas to multiple ranges, boosting productivity by 30%
-                        Implemented a feature syncing Gmail and Google Calendar with automated events dependent on bill due dates, preventing missed payments`}
+            Developed a tool to extract data from PDF store receipts and populate a Google Sheet. 
+            The tool features advanced column sorting, auto populating purchase dates, and a custom 
+            UI to apply formulas to multiple ranges. It also features syncing Gmail and Google Calendar 
+            with automated events dependent on bill due dates, preventing missed payments.`}
           Skills={["Apps Script", "G-Suite", "Typescript"]}
         />
         <hr />
@@ -53,9 +53,9 @@ export default function ProjectTimeline() {
           StartDate={new Date(2023, 2)}
           EndDate={new Date(2023, 3)}
           ProjectDescription={`
-                        Automates creating a weekly meal plan using the Google Tasks API and Google Sheets 
-                        Creates a Google Task for every selected meal and a subtask for every meal ingredient 
-                        Assimilate user feedback and implement improvements`}
+            Developed a tool to generate a weekly meal plan using the Google Tasks API and Google Sheets. 
+            The tool creates a Google Task for every selected meal and a subtask for every meal ingredient,
+            allowing the user to check off ingredients in the grocery store as the go.`}
           Skills={["Apps Script", "G-Suite", "Typescript"]}
         />
         <hr />
@@ -69,9 +69,12 @@ export default function ProjectTimeline() {
           StartDate={new Date(2020, 7)}
           EndDate={new Date(2021, 2)}
           ProjectDescription={`
-                        Utilized Unity Reflect to import Revit Geometry and created an importer/exporter to bring in custom data
-                        Developed 3 player controllers to enhance navigation of imported models, including mobile, point-to-point, and first-person perspectives
-                        Embedded Unity WebGL into a .NET site, securing user access with Autodesk's OAuth 2.0`}
+            Using Unity, I developed a game to view 2D Revit data in a 3D environment.             
+            I utilized Unity Reflect to import Autodesk Revit Geometry. I then created 
+            an importer/exporter to bring in custom data the user can interact with.
+            The game fetaured 3 player controllers to enhance navigation of imported models, 
+            including mobile, point-to-point, and first-person perspectives. I embedded Unity 
+            WebGL into a .NET site, securing user access with Autodesk's OAuth 2.0`}
           Skills={["OAuth", "C#", ".NET", "Unity"]}
         />
         <hr />
@@ -89,8 +92,7 @@ export default function ProjectTimeline() {
             to view big data at a glance. The dashboard features OAuth for
             permissions, a data text viewer that reads data from an Autodesk 3D model,
             Google Charts to visualize user and project data, and an admin dashboard
-            to manage 1000+ users.
-         `}
+            to manage 1000+ users.`}
           Skills={["OAuth", "HTML5", "CSS", "Javascript"]}
         />
         <hr />
@@ -104,11 +106,10 @@ export default function ProjectTimeline() {
           StartDate={new Date(2019, 0)}
           EndDate={new Date(2019, 4)}
           ProjectDescription={`
-                        Collaborated with artist and level designer to develop a puzzle platformer 
-                        Implemented core mechanics, such as time-warp and puzzles using C#
-                        Supported others with technical issues regarding Unity and Perforce to ensure implementation of scripts
-                        Ensured team efforts were on track to meet deadlines by frequently checking in with the team 
-         `}
+            Collaborated with an artist and level designer to develop a puzzle platformer in Unity. 
+            I implemented core features such as the player controller, a time-warp mechanic, and all 
+            puzzles. I supported others with technical issues regarding Unity and Perforce (version control) 
+            to ensure team success.`}
           Skills={["Unity", "C#"]}
         />
         <hr />
@@ -160,9 +161,10 @@ export default function ProjectTimeline() {
           StartDate={new Date(2018, 8)}
           EndDate={new Date(2018, 11)}
           ProjectDescription={`
-                        Solely developed tools for animators and lighting artists, streamlining repetitive tasks
-                        Utilized Autodesk Maya Python API to automate and export render layers for the render farm
-                        Developed a shader clean-up tool to remove duplicate shaders, improving rendering performance`}
+            Collaborted in a class-wide project with animators, tech artists, and lighting artists
+            to create a short animated film. I developed Autodesk Maya tools to streamline repetitive tasks
+            and utilized the Autodesk Maya Python API to automate and export render layers for the render farm.
+            I imporved rendering performance by Developing a shader clean-up tool to remove duplicate shaders.`}
           Skills={["Maya", "Python", "Rendering"]}
         />
         <hr />
@@ -181,10 +183,9 @@ export default function ProjectTimeline() {
           EndDate={new Date(2018, 11)}
           ProjectDescription={`
             Collaborted in a class-wide project with artists, audio engineers, and other programmers 
-            to create an AR Unity Game. As the lead engineer for the project, I
+            to create a AR Unity Game. As the lead engineer for the project, I
             implementing core gameplay mechanics, managed other engineers, and 
-            delegated tasks to ensure success. 
-        `}
+            delegated tasks to ensure success.`}
           Skills={["Unity", "C#", "Augmented Reality"]}
         />
         <hr />
@@ -229,11 +230,10 @@ export default function ProjectTimeline() {
           StartDate={new Date(2018, 0)}
           EndDate={new Date(2018, 3)}
           ProjectDescription={`
-            In a Game Design class, I Engineered and designed a horror game 
+            In a Game Design class, I engineered and designed a horror game 
             using Unity and C#. I worked on a team of 4 as the lead programmer, 
             implementing core game mechanics and systems such as
-            the character controller, progression system, camera work (i.e. cutscenes), etc.
-                         `}
+            the character controller, progression system, camera work (i.e. cutscenes).`}
           Skills={["Unity", "C#", "Lead", "Level Design"]}
         />
         <hr />
@@ -254,8 +254,7 @@ export default function ProjectTimeline() {
             Using Python and Autodesk Maya, I designed and created an Autorigging tool. 
             The tool was developed for a Tools programming class and used in a separate 
             Technical Rigging class. The tool features a UI with configurable options
-            that allow the user to change the humanoid rig to their needs.
-                         `}
+            that allow the user to change the humanoid rig to their needs.`}
           Skills={["Maya", "Python", "Technical Rigging", "Tools Programming"]}
         />
         <hr />
