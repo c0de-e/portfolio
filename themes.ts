@@ -11,26 +11,56 @@ export const CustomThemes =
         "warning": "#ff7400",
         "error": "#ff3963",
     },
+    red: {
+        "primary": "red",
+        "secondary": "#B80F0A",
+        "secondary-content": "#ffb4b0",
+        "accent": "#FF2800",
+        "base-100": "#60100b",
+    },
+    luxury: {
+        ...require("daisyui/src/theming/themes")[ "luxury" ],
+        "accent": "#9f7d97"
+    },
+    coffee: {
+        ...require("daisyui/src/theming/themes")[ "coffee" ],
+        "accent": "#1a8db0"
+    },
+    corporate: {
+        ...require("daisyui/src/theming/themes")[ "corporate" ],
+        "accent": "#95dbbc"
+    },
+    nord: {
+        ...require("daisyui/src/theming/themes")[ "nord" ],
+        "accent": "#acd3de"
+    }
 };
 
 export const DarkThemes = [
-    "aqua",
-    "cool",
     "dark",
-    "dim",
-    "dracula",
-    "halloween",
-    "night",
+    "cool",
     "synthwave",
+    "halloween",
+    "forest",
+    "aqua",
+    "luxury",
+    "dracula",
+    "business",
+    "night",
+    "coffee",
+    "dim",
+    "sunset",
+    "red"
 ];
 
 export const LightThemes = [
-    "bumblebee",
-    "emerald",
-    "garden",
     "light",
-    "lofi",
-    "pastel",
+    "emerald",
+    "cmyk",
+    "corporate",
+    "lemonade",
+    "nord",
+    "winter",
 ];
 
 export const themeTypes = [ { name: "default", type: "" } ]
