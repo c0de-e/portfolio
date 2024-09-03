@@ -34,7 +34,7 @@ export default function ExpandingContainer(props: props) {
     <div className="flex flex-col">
       <div
         ref={containerRef}
-        className={`${!showing ? "expanding-container max-h-[100vh]" : ""} overflow-clip`}
+        className={`${!showing ? "expanding-container max-h-[91vh]" : ""} overflow-clip`}
       >
         {props.div}
       </div>

@@ -22,7 +22,10 @@ export default async function Home() {
         <HomeHero />
       </section>
       <Header />
-      <section id={ABOUT_SECTION} className="scroll-mt-14">
+      <section
+        id={ABOUT_SECTION}
+        className="hero min-h-[75vh] scroll-mt-10 sm:scroll-mt-0"
+      >
         <AboutMe />
       </section>
       <section id={PROJECTS_SECTION} className="scroll-mt-16">
