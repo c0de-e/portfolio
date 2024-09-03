@@ -1,7 +1,7 @@
 export default async function AboutMe() {
   return (
     <article className="px-auto prose mx-auto p-5">
-      <p>Hi, I&apos;m Codey.</p>
+      <h1>About Me</h1>
       <p>
         I first started programming back in 2015 when my high school offered a
         computer science class for the first time. Intrigued, I took the AP

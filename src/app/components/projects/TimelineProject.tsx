@@ -16,10 +16,11 @@ export default async function TimelineProject(props: TimelineProjectProps) {
     projectLinks = <ProjectLink props={props.ProjectLinkProps} />;
 
   return (
-    <div
-      className={`${props.startOrEnd} project-hover prose rounded px-4 pb-4 pt-2 md:text-end ${props.className} flex flex-col`}
-    >
-      <div>
+    <div className={`${props.startOrEnd}`}>
+      {props.children}
+      <div
+        className={`project-hover ${props.className} prose flex flex-col rounded px-4 pb-4 pt-2 md:text-end`}
+      >
         <time className="font-mono italic">
           {props.StartDate.toLocaleString("default", {
             month: "long",
@@ -40,8 +41,8 @@ export default async function TimelineProject(props: TimelineProjectProps) {
         ) : (
           props.ProjectDescription
         )}
+        <div className={`flex flex-wrap gap-4 md:ml-auto`}>{skills}</div>
       </div>
-      <div className={`flex flex-wrap gap-4 md:ml-auto`}>{skills}</div>
     </div>
   );
 }
@@ -131,4 +132,5 @@ interface TimelineProjectProps {
   Skills: Array<string>;
   className?: HTMLAttributes<HTMLDivElement> | string;
   startOrEnd: "timeline-start" | "timeline-end";
+  children?: JSX.Element;
 }

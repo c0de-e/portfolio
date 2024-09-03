@@ -16,7 +16,11 @@ export default function ProjectTimeline() {
             (including a number of preset queries to test with) and generate Google Looker Studio dashboards per project. 
             I used Firebase Firestore to store the data, and Firebase Cloud Functions to automate data filtering.`}
           Skills={["React.js", "Next.js", "Firebase", "GCP"]}
-        />
+        >
+          <div className="prose relative left-0 top-0 mb-5 ml-5 text-left">
+            <h1>Projects</h1>
+          </div>
+        </TimelineProject>
         <hr />
       </li>
       <li>
@@ -201,7 +205,7 @@ export default function ProjectTimeline() {
           ProjectDescription={
             <p className="mb-2.5 mt-0">
               Using Kotlin and Android Studio, I developed an app for the first
-              time for a Mobile programming class. The app calculates the
+              time for a Mobile programming class. The app can calculate the
               user&apos;s{" "}
               <a
                 className="link"
@@ -209,8 +213,10 @@ export default function ProjectTimeline() {
                 href="https://en.wikipedia.org/wiki/Wilks_coefficient"
               >
                 Wilks Score
-              </a>{" "}
-              and features notetaking.
+              </a>
+              , can calculate an estimated 1 rep-max based on number of reps for
+              a given weight, and can notetake. The user&apos;s previous inputs
+              are automatically saved for convienence.
             </p>
           }
           Skills={["Android App", "Kotin", "Strength Training"]}
