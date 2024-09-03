@@ -7,7 +7,7 @@ import "@/app/styles/homeHero.css";
 export default function HomeHero() {
   return (
     <>
-      <div className="background-pattern hero absolute h-full"></div>
+      <div className="background-pattern hero absolute h-screen"></div>
       <TabFocusSkip tabbable_id="home" text="Skip To Header" />
       <div className="navbar absolute top-0 z-20 w-full">
         <div className="navbar-start"></div>

@@ -17,7 +17,7 @@ export default async function Home() {
     <div>
       <section
         id={HOME_SECTION}
-        className="hero mx-0 mb-[-56px] flex h-screen w-auto flex-col justify-center"
+        className="hero mx-0 mb-[-56px] flex min-h-screen w-auto flex-col justify-center"
       >
         <HomeHero />
       </section>
