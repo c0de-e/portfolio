@@ -9,7 +9,7 @@ export default function Signature() {
   return (
     <div className="mx-auto w-full flex-initial">
       <svg
-        className="svg-recolor flex-no-shrink w-full fill-current"
+        className="flex-no-shrink w-full fill-current brightness-100"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 664.6666666666666 292"

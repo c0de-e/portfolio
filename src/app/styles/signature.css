@@ -1,8 +1,3 @@
-.svg-recolor {
-  filter: drop-shadow(0 10000px 0 oklch(var(--p)));
-  transform: translateY(-10000px);
-}
-
 .signature {
   filter: url(#sig-glow);
   > path {
@@ -10,6 +5,7 @@
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     animation-name: draw-line;
+    stroke: oklch(var(--p));
   }
 }
 

@@ -12,18 +12,16 @@ export const SVGGlow = (props: props) => (
       <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur10" />
       <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur20" />
       <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur30" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur40" />
       <feGaussianBlur in="SourceGraphic" stdDeviation="50" result="blur50" />
       <feMerge result="merged">
-        <feMergeNode in="blur10" />
         <feMergeNode in="blur20" />
-        <feMergeNode in="blur30" />
-        <feMergeNode in="blur50" />
       </feMerge>
       <feColorMatrix
         result="blur"
         in="merged"
         type="matrix"
-        values="   1 0 0 0 0
+        values="1 0 0 0 0
                0 0.06 0 0 0
                0 0 0.44 0 0
                0 0 0 1 0"
@@ -31,6 +29,8 @@ export const SVGGlow = (props: props) => (
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="blur5" />
+        <feMergeNode in="blur20" />
+        <feMergeNode in="blur50" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
