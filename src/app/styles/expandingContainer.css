@@ -1,4 +1,4 @@
 .expanding-container {
-    mask-image: linear-gradient(to bottom, oklch(var(--b1)) 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, oklch(var(--b1)) 75%, transparent 100%);
   }
   
