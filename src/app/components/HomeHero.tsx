@@ -15,7 +15,7 @@ export default function HomeHero() {
         <div className="navbar-end">
           <ThemeController dropdownProps={{ className: "-translate-x-28" }} />
           <a
-            href="https://github.com/c0de-e/portfolio"
+            href="https://github.com/c0de-e/"
             target="_blank"
             className="svg-btn btn btn-circle btn-ghost"
           >
