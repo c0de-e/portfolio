@@ -2,11 +2,13 @@ import "@/app/styles/projectTimeline.css";
 import { HTMLAttributes } from "react";
 
 export default async function TimelineProject(props: TimelineProjectProps) {
-  const skills = props.Skills.sort().map((skill) => (
-    <div key={skill} className="skill text-sm">
-      {skill}
-    </div>
-  ));
+  const skills = props.Skills
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+    .map((skill) => (
+      <div key={skill} className="skill text-sm">
+        {skill}
+      </div>
+    ));
   let projectLinks: JSX.Element | JSX.Element[] | null = null;
   if (Array.isArray(props.ProjectLinkProps))
     projectLinks = props.ProjectLinkProps.map((p) => (
@@ -47,7 +49,7 @@ export default async function TimelineProject(props: TimelineProjectProps) {
   );
 }
 
-const ProjectLink = (props: { props: ProjectLinkProps }) => {
+const ProjectLink = (props: { props: ProjectLinkProps; }) => {
   const getIcon = () => {
     switch (props.props.type) {
       case "link":

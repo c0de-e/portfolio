@@ -22,8 +22,9 @@ export default function ProjectTimeline() {
             </p>
           }
           Skills={[
-            "React.js",
+            "React",
             "Next.js",
+            "Tailwind CSS",
             "Firebase",
             "GCP",
             "Typescript",
@@ -59,7 +60,7 @@ export default function ProjectTimeline() {
               preventing missed payments.
             </p>
           }
-          Skills={["Apps Script", "G-Suite", "Typescript"]}
+          Skills={[ "Apps Script", "G-Suite", "Typescript" ]}
         />
         <hr />
       </li>
@@ -84,7 +85,7 @@ export default function ProjectTimeline() {
               grocery store from the Google Task mobile app.
             </p>
           }
-          Skills={["Apps Script", "G-Suite", "Typescript"]}
+          Skills={[ "Apps Script", "G-Suite", "Typescript" ]}
         />
         <hr />
       </li>
@@ -94,8 +95,8 @@ export default function ProjectTimeline() {
         <TimelineProject
           ProjectTitle={"Unity Digital Twin App"}
           startOrEnd="timeline-end"
-          StartDate={new Date(2020, 7)}
-          EndDate={new Date(2021, 2)}
+          StartDate={new Date(2022, 2)}
+          EndDate={new Date(2023, 7)}
           ProjectDescription={
             <p className="mb-2.5 mt-0">
               Using Unity, I developed a game to view 2D Revit data in a 3D
@@ -119,9 +120,10 @@ export default function ProjectTimeline() {
             "OAuth",
             "C#",
             ".NET",
+            "React",
+            "Tailwind CSS",
+            "Entity Framework",
             "Unity",
-            "HTML",
-            "CSS",
             "Javascript",
             "Tools Programming",
           ]}
@@ -138,14 +140,14 @@ export default function ProjectTimeline() {
           EndDate={new Date(2022, 2)}
           ProjectDescription={
             <p className="mb-2.5 mt-0">
-              Developed and maintained an Autodesk Construction Cloud dashboard
+              Contributed to and maintained an Autodesk Construction Cloud dashboard
               to view account-wide model data at a glance. The dashboard
               features OAuth for permissions, a data text viewer to read data
               from an Autodesk 3D model, Google Charts to visualize user and
               project data, and an admin dashboard to manage 1000+ users.
             </p>
           }
-          Skills={["OAuth", "HTML", "CSS", "Javascript"]}
+          Skills={[ ".NET", "jQuery", "MVC", "OAuth", "HTML", "CSS", "Javascript" ]}
         />
         <hr />
       </li>
@@ -166,7 +168,7 @@ export default function ProjectTimeline() {
               and Perforce.
             </p>
           }
-          Skills={["Unity", "C#"]}
+          Skills={[ "Unity", "C#" ]}
         />
         <hr />
       </li>
@@ -194,7 +196,7 @@ export default function ProjectTimeline() {
               increasing speed.
             </p>
           }
-          Skills={["Unity", "C#"]}
+          Skills={[ "Unity", "C#" ]}
         />
         <hr />
       </li>
@@ -226,7 +228,7 @@ export default function ProjectTimeline() {
               developing a shader clean-up tool to remove duplicate shaders.
             </p>
           }
-          Skills={["Maya", "Python", "Rendering"]}
+          Skills={[ "Maya", "Python", "Rendering" ]}
         />
         <hr />
       </li>
@@ -251,7 +253,7 @@ export default function ProjectTimeline() {
               the project&apos;s success.
             </p>
           }
-          Skills={["Unity", "C#", "Augmented Reality"]}
+          Skills={[ "Unity", "C#", "Augmented Reality" ]}
         />
         <hr />
       </li>
@@ -279,7 +281,7 @@ export default function ProjectTimeline() {
               previous inputs are also automatically saved for future reuse.
             </p>
           }
-          Skills={["Mobile Development", "Kotlin"]}
+          Skills={[ "Mobile Development", "Kotlin" ]}
         />
         <hr />
       </li>
@@ -304,7 +306,7 @@ export default function ProjectTimeline() {
               cutscenes).
             </p>
           }
-          Skills={["Unity", "C#", "Level Design"]}
+          Skills={[ "Unity", "C#", "Level Design" ]}
         />
         <hr />
       </li>
@@ -329,7 +331,7 @@ export default function ProjectTimeline() {
               a Technical Rigging class.
             </p>
           }
-          Skills={["Maya", "Python", "Technical Rigging", "Tools Programming"]}
+          Skills={[ "Maya", "Python", "Technical Rigging", "Tools Programming" ]}
         />
         <hr />
       </li>
