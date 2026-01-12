@@ -3,7 +3,8 @@
 import { EMAIL_NAME, SUBJECT_NAME, MESSAGE_NAME } from "./Constants";
 import { HOME_SECTION } from "../header/Constants";
 import { sendContact } from "./Contact";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
+import { useActionState } from "react";
 import Turnstile from "react-turnstile";
 import {
   ButtonHTMLAttributes,
@@ -13,7 +14,7 @@ import {
 } from "react";
 
 export default function ContactForm() {
-  const [contactSuccess, formAction] = useFormState(sendContact, false);
+  const [ contactSuccess, formAction ] = useActionState(sendContact, false);
   const turnstileRef = useRef<HTMLDivElement>(null);
   const submitRef = useRef<HTMLButtonElement>(null);
 

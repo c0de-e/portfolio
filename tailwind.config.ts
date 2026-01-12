@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import daisyui from 'daisyui';
 import typography from '@tailwindcss/typography';
 import forms from '@tailwindcss/forms';
-import { CustomThemes, DarkThemes, LightThemes, } from "./themes";
+import { CustomThemes, DarkThemes, LightThemes, } from "./themes.ts";
 
 const config: Config = {
   content: [
