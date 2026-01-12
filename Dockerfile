@@ -15,6 +15,9 @@ RUN \
     else echo "Lockfile not found." && exit 1; \
     fi
 
+ARG NEXT_SERVER_ACTIONS_ENCRYPTION_KEY
+ENV NEXT_SERVER_ACTIONS_ENCRYPTION_KEY=$NEXT_SERVER_ACTIONS_ENCRYPTION_KEY
+
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
