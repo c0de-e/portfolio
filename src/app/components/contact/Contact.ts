@@ -4,22 +4,25 @@ import nodemailer from 'nodemailer';
 import { MailOptions } from 'nodemailer/lib/smtp-transport';
 import { EMAIL_NAME, SUBJECT_NAME, MESSAGE_NAME, TURNSTILE_RESPONSE } from './Constants';
 
-// Server Action
 export async function sendContact(prevState: boolean, formData: FormData): Promise<boolean> {
+    const token = formData.get(TURNSTILE_RESPONSE)?.toString();
+    if (!token) return false;
+
+    const verifyBody = new URLSearchParams();
+    verifyBody.append('secret', process.env.TURNSTILE_SECRET_KEY as string);
+    verifyBody.append('response', token);
+
     const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
     const res = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            secret: process.env.TURNSTILE_SECRET_KEY,
-            response: formData.get(TURNSTILE_RESPONSE)?.toString()
-        })
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: verifyBody
     });
 
     const data: SiteVerifyRes = await res.json();
     if (!data.success) return false;
 
-    var transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,
         auth: {
@@ -28,7 +31,7 @@ export async function sendContact(prevState: boolean, formData: FormData): Promi
         }
     });
 
-    const from_email = formData.get(EMAIL_NAME)?.toString() as string;
+    const from_email = formData.get(EMAIL_NAME)?.toString() || "";
     const mailOptions: MailOptions = {
         from: `Portfolio Mail <${from_email}>`,
         to: process.env.GMAIL_ADDRESS,
@@ -36,12 +39,15 @@ export async function sendContact(prevState: boolean, formData: FormData): Promi
         html: `<h3>From: ${from_email}</h3><br/>${formData.get(MESSAGE_NAME)?.toString()}`
     };
 
-    transporter.sendMail(mailOptions, function (err, info) {
-        if (err) { console.log(err); return false; }
-        else console.log(info);
-    });
-    return true;
+    try {
+        await transporter.sendMail(mailOptions);
+        return true;
+    } catch (err) {
+        console.error("Mail Error:", err);
+        return false;
+    }
 }
+
 
 interface SiteVerifyRes {
     action?: string;

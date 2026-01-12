@@ -14,7 +14,7 @@ import {
 } from "react";
 
 export default function ContactForm() {
-  const [ contactSuccess, formAction ] = useActionState(sendContact, false);
+  const [ contactSuccess, formAction, isPending ] = useActionState(sendContact, false);
   const turnstileRef = useRef<HTMLDivElement>(null);
   const submitRef = useRef<HTMLButtonElement>(null);
 
@@ -76,6 +76,7 @@ export default function ContactForm() {
               <div className="form-control mt-6">
                 <Submit
                   ref={submitRef}
+                  isPending={isPending}
                   onClick={() => {
                     const current = turnstileRef.current as HTMLDivElement;
                     current.style.display = "block";
@@ -121,23 +122,29 @@ export default function ContactForm() {
   );
 }
 
-// TODO - add feedback when submit fail
-const Submit = forwardRef(function Submit(
-  props: DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >,
-  _ref,
-) {
-  const { pending } = useFormStatus();
+const Submit = forwardRef<
+  HTMLButtonElement,
+  DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
+    isPending?: boolean;
+  }
+>(function Submit({ isPending, ...props }, ref) {
+  const { pending: formStatusPending } = useFormStatus();
+  const isLoading = formStatusPending || isPending;
+
   return (
     <button
-      className={`btn btn-secondary ${pending ? "btn-disabled" : ""}`}
-      type="submit"
-      disabled={pending}
       {...props}
+      ref={ref}
+      className={`btn btn-secondary ${isLoading ? "btn-disabled" : ""}`}
+      type="submit"
+      disabled={isLoading}
     >
-      Submit
+      {isLoading ? (
+        <>
+          <span className="loading loading-spinner loading-xs"></span>
+          Sending...
+        </>
+      ) : ("Submit")}
     </button>
   );
 });
