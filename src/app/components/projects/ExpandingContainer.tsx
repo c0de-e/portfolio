@@ -4,23 +4,23 @@ import { useEffect, useRef, useState } from "react";
 import "@/app/styles/expandingContainer.css";
 
 export default function ExpandingContainer(props: props) {
-  const [showing, setShowing] = useState(false);
+  const [ showing, setShowing ] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const tabbableDivsRef = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
-    props.tabbableDivs =
-      props.tabbableDivs ??
-      Array.from(
-        containerRef.current?.querySelectorAll(
-          "li",
-        ) as NodeListOf<HTMLLIElement>,
-      );
+    // 2. Populate the ref if it's empty
+    if (tabbableDivsRef.current.length === 0) {
+      tabbableDivsRef.current = Array.from(
+        containerRef.current?.querySelectorAll("li") || []
+      ) as HTMLElement[];
+    }
     updateTabbableDivs();
   });
 
   const updateTabbableDivs = () => {
-    if (!props.tabbableDivs) return;
-    props.tabbableDivs.forEach((child) => {
+    if (!tabbableDivsRef.current) return;
+    tabbableDivsRef.current.forEach((child) => {
       const pr = containerRef.current?.getBoundingClientRect() as DOMRect;
       const cr = child.getBoundingClientRect();
       const clipTolarance = 75;
@@ -53,5 +53,4 @@ export default function ExpandingContainer(props: props) {
 }
 interface props {
   div: JSX.Element;
-  tabbableDivs?: HTMLElement[];
 }
