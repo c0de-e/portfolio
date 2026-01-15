@@ -69,7 +69,6 @@ export default function ContactForm() {
                   onVerify={() => {
                     const current = turnstileRef.current as HTMLDivElement;
                     current.style.display = "none";
-                    submitRef.current?.click();
                   }}
                 />
               </div>
